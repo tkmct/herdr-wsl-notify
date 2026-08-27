@@ -1,0 +1,30 @@
+id = "tkmct.wsl-notify"
+name = "WSL Windows Notify"
+version = "0.1.0"
+min_herdr_version = "0.7.0"
+description = "Show a Windows toast when an agent finishes or blocks (WSL)"
+platforms = ["linux"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["node", "notify.mjs"]
+
+[[actions]]
+id = "toggle"
+title = "Toggle Windows notifications"
+command = ["node", "toggle.mjs"]
+
+[[actions]]
+id = "enable"
+title = "Enable Windows notifications"
+command = ["node", "toggle.mjs", "on"]
+
+[[actions]]
+id = "disable"
+title = "Disable Windows notifications"
+command = ["node", "toggle.mjs", "off"]
+
+[[actions]]
+id = "test"
+title = "Send a test toast"
+command = ["node", "notify.mjs", "--test"]
