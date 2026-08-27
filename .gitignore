@@ -1,0 +1,11 @@
+# Environment
+.env
+
+# Working files
+tmp/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
